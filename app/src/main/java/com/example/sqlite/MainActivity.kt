@@ -1,8 +1,8 @@
 package com.example.sqlite
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         Log.d("Reading", "Reading all contacts")
         val contacts = db.getAllContacts()
 
-
+        for (cn in contacts) {
+            val log = "Id: " + cn.getID() + " ,Name: " + cn.getName() + " ,Phone: " +
+                    cn.getPhoneNumber()
+            // Writing Contacts to log
+            Log.d("Name: ", log)
+        }
     }
 }
